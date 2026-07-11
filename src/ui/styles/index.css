@@ -1,8 +1,135 @@
+@import "./fonts.css";
 @import "tailwindcss";
 
+:root {
+  --color-0: #ffffff;
+  --color-50: #fafafa;
+  --color-100: #f0f0f0;
+  --color-200: #e0e0e0;
+  --color-300: #c7c7c7;
+  --color-400: #9e9e9e;
+  --color-500: #757575;
+  --color-600: #525252;
+  --color-700: #363636;
+  --color-800: #1f1f1f;
+  --color-900: #121212;
+  --color-950: #0a0a0a;
+
+  --font-family-base:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --color-0: #0a0a0a;
+  --color-50: #121212;
+  --color-100: #1f1f1f;
+  --color-200: #363636;
+  --color-300: #525252;
+  --color-400: #757575;
+  --color-500: #9e9e9e;
+  --color-600: #c7c7c7;
+  --color-700: #e0e0e0;
+  --color-800: #f0f0f0;
+  --color-900: #fafafa;
+  --color-950: #ffffff;
+}
+
+@theme {
+  /* Color Palette */
+  --color-background: var(--color-50);
+  --color-surface: var(--color-100);
+
+  --color-foreground: var(--color-900);
+  --color-foreground-secondary: var(--color-600);
+  --color-foreground-muted: var(--color-400);
+
+  /* Typography */
+  --font-display: "Passion One", var(--font-family-base);
+  --font-sans: "Inter", var(--font-family-base);
+
+  --font-size-*: initial;
+  --text-hero: clamp(4.5rem, 4.667rem + 4.704vw, 8rem);
+  --text-title: clamp(2rem, 1.5rem + 2.222vw, 3.5rem);
+  --text-subtitle: clamp(1.25rem, 1.083rem + 0.741vw, 1.75rem);
+  --text-regular: clamp(1rem, 0.958rem + 0.185vw, 1.125rem);
+  --text-button: clamp(0.9375rem, 0.917rem + 0.093vw, 1rem);
+  --text-small: clamp(0.75rem, 0.708rem + 0.185vw, 0.875rem);
+
+  --font-weight-*: initial;
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+
+  /* Fluid Width */
+  --pad: 2em;
+  --spacing-app-boundary: min(1700px, 100%);
+  --spacing-app-boundary-900: min(1700px, 90%);
+  --spacing-app-boundary-800: min(1700px, 80%);
+  --spacing-app-content-boundary: min(1500px, 100%);
+  --spacing-fluid-width-tiny: min(120px, 100%);
+  --spacing-fluid-width-tiny-padded: min(120px, 100% - var(--pad));
+  --spacing-fluid-width-xxs: min(280px, 100%);
+  --spacing-fluid-width-xxs-padded: min(280px, 100% - var(--pad));
+  --spacing-fluid-width-xs: min(340px, 100%);
+  --spacing-fluid-width-xs-padded: min(340px, 100% - var(--pad));
+  --spacing-fluid-width-sm: min(460px, 100%);
+  --spacing-fluid-width-sm-padded: min(460px, 100% - var(--pad));
+  --spacing-fluid-width-md: min(660px, 100%);
+  --spacing-fluid-width-md-padded: min(660px, 100% - var(--pad));
+  --spacing-fluid-width-lg: min(860px, 100%);
+  --spacing-fluid-width-lg-padded: min(860px, 100% - var(--pad));
+  --spacing-fluid-width-xl: min(1160px, 100%);
+  --spacing-fluid-width-xl-padded: min(1060px, 100% - var(--pad));
+  --spacing-fluid-width-2xl: min(1260px, 100%);
+  --spacing-fluid-width-2xl-padded: min(1260px, 100% - var(--pad));
+  --spacing-fluid-width-3xl: min(1460px, 100%);
+  --spacing-fluid-width-3xl-padded: min(1460px, 100% - var(--pad));
+
+  /* --- Breakpoints --- */
+  --breakpoint-xs: 21.25rem;
+}
+
 @layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-size: var(--text-regular);
+  }
   #root {
     width: 100%;
     height: 100%;
   }
+
+  img,
+  svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    user-select: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: var(--text-hero);
+  }
+  h2 {
+    font-size: var(--text-title);
+  }
+  h3 {
+    font-size: var(--text-subtitle);
+  }
+}
+
+@utility header-actions-icon {
+  @apply w-6;
 }
