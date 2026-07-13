@@ -54,7 +54,7 @@
   --text-subtitle: clamp(1.25rem, 1.083rem + 0.741vw, 1.75rem);
   --text-regular: clamp(1rem, 0.958rem + 0.185vw, 1.125rem);
   --text-button: clamp(0.9375rem, 0.917rem + 0.093vw, 1rem);
-  --text-small: clamp(0.75rem, 0.708rem + 0.185vw, 0.875rem);
+  --text-small: clamp(0.75rem, 0.508rem + 0.185vw, 0.875rem);
 
   --font-weight-*: initial;
   --font-weight-light: 200;
@@ -89,6 +89,18 @@
 
   /* --- Breakpoints --- */
   --breakpoint-xs: 21.25rem;
+
+  /* Motions */
+  --ease-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Z-index scale --- */
+  --z-index-*: initial;
+  --z-index-base: 0;
+  --z-index-above: 10;
+  --z-index-overlay: 200;
+  --z-index-modal: 300;
+  --z-index-menu: 400;
+  --z-index-toast: 500;
 }
 
 @layer base {
@@ -127,6 +139,22 @@
   }
   h3 {
     font-size: var(--text-subtitle);
+  }
+
+  small {
+    font-size: var(--text-small);
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  @layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled),
+    label {
+      cursor: pointer;
+    }
   }
 }
 
