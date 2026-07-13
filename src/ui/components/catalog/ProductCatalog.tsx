@@ -1,9 +1,11 @@
-import { Filter } from "lucide-react";
-import SortIcon from "../svgs/SortIcon";
+import { Filter, SortDesc } from "lucide-react";
 import { useFilter } from "../../../context/catalog/filter.context";
+import { useSortProduct } from "../../../context/catalog/sort.context";
+import SortModal from "./SortModal";
 
 export default function ProductCatalog() {
   const { isFilterCollapsed, setIsFilterCollapsed } = useFilter();
+  const { isSortCollapsed, setIsSortCollapsed } = useSortProduct();
   return (
     <section
       aria-label="Product catalog"
@@ -26,11 +28,13 @@ export default function ProductCatalog() {
             </span>
           </button>
           <button
+            onClick={() => setIsSortCollapsed(false)}
+            aria-expanded={!isSortCollapsed}
             aria-haspopup="dialog"
             className="uppercase text-small inline-flex items-stretch gap-px">
             Sort
             <span className="w-5 h-full grid place-items-center">
-              <SortIcon />
+              <SortDesc />
             </span>
           </button>
         </div>
@@ -40,6 +44,7 @@ export default function ProductCatalog() {
           <li key={index} className="block aspect-square outline"></li>
         ))}
       </ul>
+      <SortModal />
     </section>
   );
 }

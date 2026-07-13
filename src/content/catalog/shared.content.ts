@@ -37,4 +37,11 @@ const priceFilter = {
   min: 0,
   max: 20000,
 };
-export { commonFilters, priceFilter };
+
+const sort = [
+  "Popularity",
+  "Price High to Low",
+  "Price Low to High",
+  "Latest Arrival",
+];
+export { commonFilters, priceFilter, sort };
