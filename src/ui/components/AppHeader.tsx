@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router";
 import Logo from "./svgs/Logo";
 import TextLogo from "./svgs/TextLogo";
-import { mainLinks } from "../../content/shared.content";
+import { mainLinks } from "../../content/shared";
 import UserIcon from "./svgs/UserIcon";
 import BagIcon from "./svgs/BagIcon";
 import SearchIcon from "./svgs/SearchIcon";
 
 export default function AppHeader() {
   return (
-    <header className="p-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center gap-y-4">
+    <header className="p-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center gap-y-4 relative after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-foreground after:origin-center">
       <Link to={"/"} className="block w-12 sm:w-44">
         <Logo className="sm:hidden" />
         <TextLogo className="hidden sm:block" />
