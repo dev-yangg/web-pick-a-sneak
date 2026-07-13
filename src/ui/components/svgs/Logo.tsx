@@ -4,6 +4,8 @@ export default function Logo({ className }: { className?: string }) {
       className={className ?? " "}
       viewBox="0 0 50 45"
       fill="none"
+      role="img"
+      aria-label="Pick a Sneak"
       xmlns="http://www.w3.org/2000/svg">
       <rect width="50" height="45" rx="13" className="fill-current" />
       <path
