@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router";
 import Logo from "./svgs/Logo";
 import TextLogo from "./svgs/TextLogo";
-import { mainLinks } from "../../content/shared";
+import { mainLinks } from "../../content/shared.content";
 import UserIcon from "./svgs/UserIcon";
 import BagIcon from "./svgs/BagIcon";
 import SearchIcon from "./svgs/SearchIcon";
