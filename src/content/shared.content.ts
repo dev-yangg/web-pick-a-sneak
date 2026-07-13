@@ -6,6 +6,10 @@ export const mainLinks: NavLink[] = [
     href: "/products/new-arrivals",
   },
   {
+    label: "Catalog",
+    href: "/products",
+  },
+  {
     label: "Men",
     href: "/products/men",
   },
