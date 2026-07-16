@@ -161,3 +161,7 @@
 @utility header-actions-icon {
   @apply w-6;
 }
+
+.resizing * {
+  transition: none !important;
+}

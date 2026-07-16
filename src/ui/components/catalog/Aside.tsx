@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import AsideFilters from "./AsideFilters";
 import DimOverlay from "../DimOverlay";
+import useBreakpoint from "../../../hooks/useBreakpoint";
 
 interface Props {
   isFilterActive: boolean;
@@ -8,6 +9,8 @@ interface Props {
 }
 
 export default function Aside({ isFilterActive, closeFilter }: Props) {
+  useBreakpoint("(min-width: 768px)", closeFilter);
+
   return (
     <>
       <DimOverlay isDimmed={isFilterActive} onClick={closeFilter} />
