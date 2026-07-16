@@ -55,6 +55,7 @@
   --text-regular: clamp(1rem, 0.958rem + 0.185vw, 1.125rem);
   --text-button: clamp(0.9375rem, 0.917rem + 0.093vw, 1rem);
   --text-small: clamp(0.75rem, 0.508rem + 0.185vw, 0.875rem);
+  --text-tiny: clamp(0.6rem, 0.478rem + 0.185vw, 0.775rem);
 
   --font-weight-*: initial;
   --font-weight-light: 200;
@@ -122,6 +123,11 @@
     height: auto;
   }
 
+  input:is(:focus, :focus-within) {
+    border: none;
+    outline: none;
+  }
+
   img {
     user-select: none;
   }
@@ -164,4 +170,13 @@
 
 .resizing * {
   transition: none !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 0px white inset !important;
+  box-shadow: 0 0 0 0px white inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
 }

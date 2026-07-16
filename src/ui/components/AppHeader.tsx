@@ -35,9 +35,9 @@ export default function AppHeader() {
         <button className="header-actions-icon">
           <BagIcon />
         </button>
-        <button className="header-actions-icon">
+        <Link to={"/auth/login"} className="header-actions-icon">
           <UserIcon />
-        </button>
+        </Link>
       </div>
     </header>
   );
