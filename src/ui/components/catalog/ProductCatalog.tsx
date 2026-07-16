@@ -1,11 +1,21 @@
 import { Filter, SortDesc } from "lucide-react";
-import { useFilter } from "../../../context/catalog/filter.context";
-import { useSortProduct } from "../../../context/catalog/sort.context";
 import SortModal from "./SortModal";
 
-export default function ProductCatalog() {
-  const { isFilterCollapsed, setIsFilterCollapsed } = useFilter();
-  const { isSortCollapsed, setIsSortCollapsed } = useSortProduct();
+interface Props {
+  isSortActive: boolean;
+  openSort: () => void;
+  closeSort: () => void;
+  isFilterActive: boolean;
+  openFilter: () => void;
+}
+
+export default function ProductCatalog({
+  isSortActive,
+  openSort,
+  closeSort,
+  isFilterActive,
+  openFilter,
+}: Props) {
   return (
     <section
       aria-label="Product catalog"
@@ -19,8 +29,8 @@ export default function ProductCatalog() {
           aria-label="Catalog header actions"
           className="flex gap-x-4">
           <button
-            onClick={() => setIsFilterCollapsed(false)}
-            aria-expanded={!isFilterCollapsed}
+            onClick={openFilter}
+            aria-expanded={isFilterActive}
             className="inline-flex md:hidden uppercase text-small  items-stretch gap-px">
             Filters
             <span className="w-5 h-full grid place-items-center">
@@ -28,8 +38,8 @@ export default function ProductCatalog() {
             </span>
           </button>
           <button
-            onClick={() => setIsSortCollapsed(false)}
-            aria-expanded={!isSortCollapsed}
+            onClick={openSort}
+            aria-expanded={!isSortActive}
             aria-haspopup="dialog"
             className="uppercase text-small inline-flex items-stretch gap-px">
             Sort
@@ -44,7 +54,7 @@ export default function ProductCatalog() {
           <li key={index} className="block aspect-square outline"></li>
         ))}
       </ul>
-      <SortModal />
+      <SortModal isSortActive={isSortActive} closeSort={closeSort} />
     </section>
   );
 }
