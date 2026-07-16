@@ -19,7 +19,7 @@ export default function ProductCatalog({
   return (
     <section
       aria-label="Product catalog"
-      className="grow flex flex-col gap-4 relative before:absolute before:inset-y-0 before:left-0 before:bg-foreground before:w-px before:z-10 p-4">
+      className="grow flex flex-col gap-4 relative before:absolute before:inset-y-0 before:left-0 before:bg-foreground before:w-px before:z-10 p-4 min-h-dvh">
       <header className="uppercase flex justify-between">
         <p aria-label="Total products" className="text-small">
           10 Products
