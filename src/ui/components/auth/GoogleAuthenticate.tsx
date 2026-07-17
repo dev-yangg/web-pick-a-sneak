@@ -14,7 +14,7 @@ export default function GoogleAuthenticate({
       <div
         role="separator"
         aria-label="Or continue with"
-        className="flex justify-center items-center gap-4 relative">
+        className="flex justify-center items-center gap-4 my-2 relative">
         <div
           className="absolute bg-foreground/45 h-px top-1/2 -translate-y-1/2 rounded-md inset-x-0"
           aria-hidden="true"

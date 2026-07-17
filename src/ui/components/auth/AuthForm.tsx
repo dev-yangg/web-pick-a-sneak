@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 interface Field {
   type: string;
   label: string;
+  name: string;
   placeholder?: string;
 }
 
@@ -20,7 +21,7 @@ export default function AuthForm({ fields, isLoggingIn = true }: Props) {
           key={input.label}
           type={input.type}
           id={input.label}
-          name={input.label}
+          name={input.name}
           label={input.label}
           placeholder={input.placeholder}
         />

@@ -1,6 +1,11 @@
 const authCommons = [
-  { type: "email", label: "email" },
-  { type: "password", label: "password" },
+  {
+    type: "email",
+    label: "email",
+    name: "email",
+    placeholder: "you@example.com",
+  },
+  { type: "password", label: "password", name: "password" },
 ];
 const loginContent = {
   headline: "Welcome Back",
@@ -10,11 +15,16 @@ const loginContent = {
 
 const registerContent = {
   headline: "Create Account",
-  subheadline: "Join Pick a Sneak and get access to drops, offers, and more",
+  subheadline: "Join and get access to drops, offers, and more",
   form: [
-    { type: "text", label: "Full Name" },
+    {
+      type: "text",
+      label: "full name",
+      name: "full-name",
+      placeholder: "John Doe",
+    },
     ...authCommons,
-    { type: "password", label: "Confirm Password" },
+    { type: "password", label: "confirm password", name: "confirm-password" },
   ],
 };
 

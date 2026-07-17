@@ -6,10 +6,10 @@ import AuthFormHeader from "../ui/components/auth/AuthFormHeader";
 import GoogleAuthenticate from "../ui/components/auth/GoogleAuthenticate";
 
 export default function Register() {
-  const { headline, subheadline, form } = registerContent;
+  const { subheadline, form } = registerContent;
   return (
     <AuthFormContainer>
-      <AuthFormHeader headline={headline} subheadline={subheadline} />
+      <AuthFormHeader subheadline={subheadline} />
       <AuthForm isLoggingIn={false} fields={form} />
       <GoogleAuthenticate isLoggingIn={false} />
       <AuthFormFooter isLoggingIn={false} />
