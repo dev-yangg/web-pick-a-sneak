@@ -15,6 +15,9 @@
   --color-900: #121212;
   --color-950: #0a0a0a;
 
+  --skeleton-base: var(--color-300);
+  --skeleton-highlight: var(--color-200);
+
   --font-family-base:
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -44,14 +47,17 @@
   --color-foreground-secondary: var(--color-600);
   --color-foreground-muted: var(--color-400);
 
+  --color-skeleton: var(--skeleton-base);
+  --color-skeleton-highlight: var(--skeleton-highlight);
+
   /* Typography */
   --font-display: "Passion One", var(--font-family-base);
   --font-sans: "Inter", var(--font-family-base);
 
   --font-size-*: initial;
   --text-hero: clamp(4.5rem, 4.667rem + 4.704vw, 8rem);
-  --text-title: clamp(2rem, 1.5rem + 2.222vw, 3.5rem);
-  --text-subtitle: clamp(1.25rem, 1.083rem + 0.741vw, 1.75rem);
+  --text-title: clamp(1.75rem, 1.5rem + 2.222vw, 2rem);
+  --text-subtitle: clamp(1.25rem, 1.083rem + 0.741vw, 1.45rem);
   --text-regular: clamp(1rem, 0.958rem + 0.185vw, 1.125rem);
   --text-button: clamp(0.9375rem, 0.917rem + 0.093vw, 1rem);
   --text-small: clamp(0.75rem, 0.508rem + 0.185vw, 0.875rem);
@@ -163,9 +169,53 @@
     }
   }
 }
+@utility page-padded-section {
+  @apply px-4 py-8;
+}
+@utility page-padded-section-x {
+  @apply px-4;
+}
+@utility page-padded-section-y {
+  @apply py-8;
+}
 
 @utility header-actions-icon {
   @apply w-6;
+}
+
+@utility skeleton {
+  position: relative;
+  background-color: var(--color-skeleton);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-skeleton-highlight),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@utility vertical-divider-line-pseudo {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  background-color: currentColor;
 }
 
 .resizing * {
@@ -179,4 +229,21 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0 0px white inset !important;
   -webkit-text-fill-color: black !important;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+@utility banner-scroll {
+  animation: scrollBanner 30s linear infinite;
+}
+
+@keyframes scrollBanner {
+  to {
+    transform: translateX(calc(-1 * var(--group-width) - 1rem));
+    /* -1rem accounts for the gap-4 between the measured group and the next one */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-scroll {
+    animation: none;
+  }
 }
