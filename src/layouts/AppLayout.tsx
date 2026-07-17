@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import AppHeader from "../ui/components/AppHeader";
 import useDisableTransitions from "../hooks/useDisableTransitions";
+import AppFooter from "../ui/components/AppFooter";
 
 export default function AppLayout() {
   useDisableTransitions();
@@ -9,7 +10,7 @@ export default function AppLayout() {
     <>
       <AppHeader />
       <Outlet />
-      <footer></footer>
+      <AppFooter />
     </>
   );
 }
