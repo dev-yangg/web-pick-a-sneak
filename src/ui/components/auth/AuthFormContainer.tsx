@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import Logo from "../svgs/Logo";
 import TextLogo from "../svgs/TextLogo";
 
 export default function AuthFormContainer({
@@ -10,11 +9,10 @@ export default function AuthFormContainer({
   return (
     <main className="w-full h-dvh grid place-items-center px-8">
       <section className="w-fluid-width-xs text-foreground bg-background rounded-lg outline-5 px-5 py-4 flex flex-col gap-2">
-        <Link to={"/"} className="flex items-baseline gap-1">
-          <span className="inline-block w-7">
-            <Logo />
-          </span>
-          <span className="inline-block w-42">
+        <Link
+          to={"/"}
+          className="flex items-center py-2 -translate-x-1.5 justify-center gap-1">
+          <span className="inline-block w-45">
             <TextLogo />
           </span>
         </Link>
