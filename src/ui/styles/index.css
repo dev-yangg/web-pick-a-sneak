@@ -236,10 +236,10 @@ input:-webkit-autofill:active {
 }
 
 @utility text-logo-scroller {
-  @apply w-54 md:w-84 px-4 md:px-8;
+  @apply w-84 px-8;
 }
 @utility logo-scroller {
-  @apply w-8 md:w-10;
+  @apply w-10;
 }
 
 @keyframes scrollBanner {
