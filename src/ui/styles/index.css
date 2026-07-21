@@ -1,5 +1,6 @@
-@import "./fonts.css";
 @import "tailwindcss";
+@import "./fonts.css";
+@import "./variants.css";
 
 :root {
   --color-0: #ffffff;
@@ -121,6 +122,10 @@
     height: 100%;
   }
 
+  :focus {
+    outline: none;
+  }
+
   img,
   svg {
     display: block;
@@ -167,6 +172,11 @@
     cursor: pointer;
   }
 }
+
+@utility interactive {
+  @apply hocus:bg-foreground hocus:text-background;
+}
+
 @utility page-padded-section {
   @apply px-4 py-8;
 }
@@ -178,7 +188,7 @@
 }
 
 @utility header-actions-icon {
-  @apply w-6;
+  @apply w-10 p-2 rounded-md;
 }
 
 @utility skeleton {
@@ -214,6 +224,27 @@
   transform: translateY(-50%);
   width: 1px;
   background-color: currentColor;
+}
+
+@utility clip-spread {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: currentColor;
+    clip-path: circle(0% at 50% 100%);
+    transition: clip-path 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:is(:hover, :focus-visible)::before {
+    clip-path: circle(110% at 50% 100%);
+  }
 }
 
 .resizing * {
