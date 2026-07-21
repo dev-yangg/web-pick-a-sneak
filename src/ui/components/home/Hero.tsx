@@ -13,10 +13,10 @@ export default function Hero() {
             to="/products"
             className="inline-flex font-bold uppercase mt-4 self-start group px-2">
             <span className="max-xs:text-small flex items-center gap-x-4">
-              <span className="group-hover:translate-x-2 transition-transform duration-300 ease-in-out will-change-transform">
+              <span className="group-hocus:translate-x-2 transition-transform duration-300 ease-in-out will-change-transform">
                 Shop Now
               </span>
-              <span className="inline-block w-6 group-hover:translate-x-4 transition-transform duration-300 ease-in-out">
+              <span className="inline-block w-6 group-hocus:translate-x-4 transition-transform duration-300 ease-in-out">
                 <ArrowRight />
               </span>
             </span>

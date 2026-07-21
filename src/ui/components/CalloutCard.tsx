@@ -37,9 +37,9 @@ export default function CalloutCard({
       {to && (
         <Link
           to={to}
-          className="uppercase outline outline-foreground/45 hover:outline-none hover:bg-foreground hover:text-background transition-colors duration-150 ease-linear self-start pl-4 pr-3 py-1 rounded-sm mt-4 flex items-center gap-4 group">
+          className="uppercase outline outline-foreground/45 hocus:outline-none hocus:bg-foreground hocus:text-background transition-colors duration-150 ease-linear self-start pl-4 pr-3 py-1 rounded-sm mt-4 flex items-center gap-4 group">
           <span className="font-semibold">{ctaTitle}</span>
-          <span className="inline-block w-5 group-hover:translate-x-1 transition-transform duration-500 ease-cubic">
+          <span className="inline-block w-5 group-hocus:translate-x-1 transition-transform duration-500 ease-cubic">
             <ArrowRight />
           </span>
         </Link>

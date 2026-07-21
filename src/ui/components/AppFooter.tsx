@@ -12,7 +12,7 @@ export default function AppFooter() {
         <Link
           to={"/"}
           aria-label="Go Home"
-          className="lg:justify-self-start inline-flex gap-2 items-center lg:bg-background rounded-lg p-2 text-background lg:text-foreground">
+          className="lg:justify-self-start inline-flex gap-2 items-center lg:bg-background rounded-lg p-2 text-background lg:text-foreground drop-shadow-transparent drop-shadow-[0_0_5px] focus:drop-shadow-background transition-all duration-300 ease-cubic">
           <div className="w-12 text-foreground hidden lg:block">
             <Logo />
           </div>
@@ -32,7 +32,9 @@ export default function AppFooter() {
               <ul>
                 {links.map(({ href, label }) => (
                   <li key={href}>
-                    <Link to={href} className="text-background/65">
+                    <Link
+                      to={href}
+                      className="text-background/65 inline-block animated-underline will-change-transform">
                       {label}
                     </Link>
                   </li>
@@ -58,7 +60,7 @@ export default function AppFooter() {
               type="submit"
               aria-label="Subscribe to newsletter"
               className="bg-background text-foreground grid place-content-center pl-1 pr-2 outline outline-background rounded-tr-sm rounded-br-sm group">
-              <span className="inline-block w-6 group-hover:translate-x-1 transition-[transform_colors] duration-150 ease-cubic text-foreground/55 group-hover:text-foreground">
+              <span className="inline-block w-6 group-hocus:translate-x-1 transition-[transform_colors] duration-150 ease-cubic text-foreground/55 group-hocus:text-foreground">
                 <ArrowRight />
               </span>
             </button>

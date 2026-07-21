@@ -226,6 +226,10 @@
   background-color: currentColor;
 }
 
+@utility animated-underline {
+  @apply relative after:transition-transform after:duration-300 after:ease-cubic after:scale-x-0 hocus:after:scale-x-100 after:absolute after:bottom-0 after:origin-left after:left-0 after:w-full after:h-px after:bg-current;
+}
+
 @utility clip-spread {
   position: relative;
   isolation: isolate;
@@ -275,6 +279,19 @@ input:-webkit-autofill:active {
   to {
     transform: translateX(calc(-1 * var(--group-width) - 1rem));
     /* -1rem accounts for the gap-4 between the measured group and the next one */
+  }
+}
+
+@utility animate-levitate {
+  animation: levitate 1000ms ease-in-out infinite;
+}
+@keyframes levitate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
   }
 }
 

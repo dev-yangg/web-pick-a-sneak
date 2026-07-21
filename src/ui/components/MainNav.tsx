@@ -10,7 +10,11 @@ export default function MainNav() {
             <NavLink
               to={link.href}
               className={({ isActive }: NavLinkRenderProps) =>
-                `p-2 lg:px-3 lg:py-1 rounded-md lg:rounded-none relative group lg:hocus:text-shadow-[0_0_1px] text-shadow-foreground transition-[text-shadow] duration-400 ease-cubic will-change-transform group ${isActive ? "max-lg:bg-foreground max-lg:text-background lg:text-shadow-[0_0_1px]" : ""}`
+                `p-2 lg:px-3 lg:py-1 rounded-md lg:rounded-none relative group lg:hocus:text-shadow-[0_0_1px] text-shadow-foreground transition-[text-shadow] duration-400 ease-cubic will-change-transform max-lg:focus-within:text-background ${
+                  isActive
+                    ? "max-lg:bg-foreground max-lg:focus-within:bg-foreground max-lg:text-background lg:text-shadow-[0_0_1px]"
+                    : "max-lg:focus-within:bg-foreground/85"
+                }`
               }>
               {({ isActive }: NavLinkRenderProps) => (
                 <>

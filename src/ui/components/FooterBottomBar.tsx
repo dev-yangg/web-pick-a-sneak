@@ -15,14 +15,14 @@ export default function FooterBottomBar() {
             <li className="lg:mx-auto">
               <Link
                 to="/privacy"
-                className="text-background/65 hover:text-background transition-colors duration-300 ease-cubic">
+                className="text-background/65 hocus:text-background animated-underline transition-colors duration-300 ease-cubic">
                 Privacy Policy
               </Link>
             </li>
             <li className="lg:mx-auto">
               <Link
                 to="/terms"
-                className="text-background/65 hover:text-background transition-colors duration-300 ease-cubic">
+                className="text-background/65 hocus:text-background animated-underline transition-colors duration-300 ease-cubic">
                 Terms of Service
               </Link>
             </li>
@@ -36,8 +36,13 @@ export default function FooterBottomBar() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-6">
-                  <Icon />
+                  className="block w-6 group">
+                  <span className="inline-block group-hocus:animate-levitate pointer-events-none translate-y-1 transition-transform duration-300 ease-cubic group-hocus:translate-y-0">
+                    <Icon />
+                  </span>
+                  <div
+                    aria-hidden="true"
+                    className="w-1 mt-px aspect-square bg-current rounded-full mx-auto scale-0 group-hocus:scale-100 transition-transform duration-300 ease-cubic"></div>
                 </a>
               </li>
             ))}
