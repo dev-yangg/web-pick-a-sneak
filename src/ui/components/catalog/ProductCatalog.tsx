@@ -1,5 +1,6 @@
 import { Filter, SortDesc } from "lucide-react";
 import SortModal from "./SortModal";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 
 interface Props {
   isSortActive: boolean;
@@ -51,7 +52,9 @@ export default function ProductCatalog({
       </header>
       <ul className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(min(220px,100%),1fr))] gap-4">
         {Array.from({ length: 10 }).map((_, index) => (
-          <li key={index} className="block aspect-square outline"></li>
+          <li key={index} className="block aspect-square">
+            <ProductCardSkeleton />
+          </li>
         ))}
       </ul>
       <SortModal isSortActive={isSortActive} closeSort={closeSort} />
