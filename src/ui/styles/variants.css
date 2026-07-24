@@ -1,1 +1,1 @@
-@custom-variant hocus (&:hover, &:focus);
+@custom-variant hocus (&:hover, &:focus-visible);

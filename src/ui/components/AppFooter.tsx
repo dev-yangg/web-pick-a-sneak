@@ -12,7 +12,7 @@ export default function AppFooter() {
         <Link
           to={"/"}
           aria-label="Go Home"
-          className="lg:justify-self-start inline-flex gap-2 items-center lg:bg-background rounded-lg p-2 text-background lg:text-foreground drop-shadow-transparent drop-shadow-[0_0_5px] focus:drop-shadow-background transition-all duration-300 ease-cubic">
+          className="lg:justify-self-start inline-flex gap-2 items-center lg:bg-background rounded-lg p-2 text-background lg:text-foreground drop-shadow-transparent drop-shadow-[0_0_5px] focus-visible:drop-shadow-background transition-all duration-300 ease-cubic">
           <div className="w-12 text-foreground hidden lg:block">
             <Logo />
           </div>
